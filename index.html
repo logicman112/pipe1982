@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>하수구막힘 배관전문 - 서울 인천 경기 24시간 긴급출동</title>
+    <meta name="description" content="서울 인천 경기 하수구막힘 변기역류 싱크대막힘 배관전문. 내시경진단 고압세척 당일해결. 추가비용 없는 정직한 서비스.">
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzE1NjNlYiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTUlIiBmb250LXNpemU9IjE4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCI+8J+SqTwvdGV4dD48L3N2Zz4=" type="image/svg+xml">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#fff;color:#111;overflow-x:hidden}
+
+        /* 모바일 하단 고정 전화버튼 */
+        .mobile-cta{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:linear-gradient(135deg,#1563eb,#0f4cbf);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 -4px 20px rgba(21,99,235,.3)}
+        .mobile-cta .txt{color:rgba(255,255,255,.85);font-size:.78em;line-height:1.4}
+        .mobile-cta .txt strong{color:#fff;font-size:.92em;display:block}
+        .mobile-cta a{background:#fff;color:#1563eb;padding:12px 24px;border-radius:50px;font-weight:900;font-size:1em;text-decoration:none;white-space:nowrap;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+        .mb-pad{height:65px}
+
+        /* 상단 알림바 */
+        .top-bar{background:#1563eb;padding:10px 20px;text-align:center;font-size:.83em;color:rgba(255,255,255,.9)}
+        .top-bar a{color:#fff;font-weight:700;text-decoration:none}
+
+        /* 헤더 */
+        header{background:#fff;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #f0f0f0;position:sticky;top:0;z-index:100;box-shadow:0 2px 15px rgba(0,0,0,.06)}
+        .logo{font-size:1.25em;font-weight:900;color:#111;display:flex;align-items:center;gap:8px}
+        .logo span{color:#1563eb}
+        .header-tel{background:#1563eb;color:#fff;padding:10px 22px;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9em;transition:background .2s}
+        .header-tel:hover{background:#0f4cbf}
+
+        /* 히어로 - 심플 좌우분할 */
+        .hero{min-height:90vh;display:grid;grid-template-columns:55% 45%;background:#fff}
+        .hero-left{padding:100px 60px 80px;display:flex;flex-direction:column;justify-content:center;position:relative}
+        .hero-left::after{content:'';position:absolute;right:0;top:10%;bottom:10%;width:1px;background:linear-gradient(180deg,transparent,#e5e7eb 30%,#e5e7eb 70%,transparent)}
+        .hero-tag{display:inline-flex;align-items:center;gap:6px;background:#eff6ff;color:#1563eb;padding:7px 16px;border-radius:4px;font-size:.82em;font-weight:700;letter-spacing:1px;margin-bottom:28px;width:fit-content}
+        .hero h1{font-size:clamp(2em,4vw,3.2em);font-weight:900;line-height:1.2;letter-spacing:-1px;margin-bottom:20px;color:#111}
+        .hero h1 em{font-style:normal;color:#1563eb}
+        .hero-sub{font-size:1.05em;color:#666;line-height:1.8;margin-bottom:35px;max-width:480px}
+        .hero-checks{display:flex;flex-direction:column;gap:10px;margin-bottom:40px}
+        .check{display:flex;align-items:center;gap:10px;font-size:.95em;color:#333}
+        .check-dot{width:20px;height:20px;background:#eff6ff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7em;color:#1563eb;flex-shrink:0;font-weight:900}
+        .hero-btn{display:inline-flex;align-items:center;gap:12px;background:#1563eb;color:#fff;padding:18px 40px;border-radius:10px;font-size:1.2em;font-weight:900;text-decoration:none;width:fit-content;transition:all .2s;box-shadow:0 6px 20px rgba(21,99,235,.3)}
+        .hero-btn:hover{background:#0f4cbf;transform:translateY(-2px);box-shadow:0 10px 30px rgba(21,99,235,.4)}
+
+        /* 히어로 우측 */
+        .hero-right{background:#f8faff;display:flex;flex-direction:column;justify-content:center;padding:60px 50px;gap:20px}
+        .symptom-title{font-size:1em;font-weight:800;color:#111;margin-bottom:5px;padding-bottom:12px;border-bottom:2px solid #e5e7eb}
+        .symptom-list{display:flex;flex-direction:column;gap:10px}
+        .sym-item{display:flex;align-items:center;gap:12px;padding:14px 18px;background:#fff;border-radius:10px;border:1px solid #e5e7eb;transition:all .2s;cursor:default}
+        .sym-item:hover{border-color:#1563eb;background:#eff6ff}
+        .sym-dot{width:8px;height:8px;background:#ef4444;border-radius:50%;animation:sym-pulse 1.5s infinite;flex-shrink:0}
+        @keyframes sym-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+        .sym-item span{font-size:.9em;color:#333}
+        .call-card{background:linear-gradient(135deg,#1563eb,#0f4cbf);border-radius:12px;padding:22px;text-align:center;color:#fff;margin-top:5px}
+        .call-card p{font-size:.85em;color:rgba(255,255,255,.8);margin-bottom:8px}
+        .call-card a{font-size:1.5em;font-weight:900;color:#fff;text-decoration:none;display:block}
+
+        /* 통계 */
+        .stats{background:#111;padding:45px 20px}
+        .stats-inner{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:0;max-width:900px;margin:0 auto}
+        .stat-item{text-align:center;padding:20px;border-right:1px solid rgba(255,255,255,.08)}
+        .stat-item:last-child{border-right:none}
+        .stat-n{font-size:2.5em;font-weight:900;color:#60a5fa;display:block;line-height:1}
+        .stat-l{font-size:.8em;color:rgba(255,255,255,.5);margin-top:6px}
+
+        /* 섹션 공통 */
+        .sec{padding:80px 20px}
+        .sec-inner{max-width:1050px;margin:0 auto}
+        .sec-label{font-size:.75em;font-weight:700;color:#1563eb;letter-spacing:3px;text-transform:uppercase;display:block;margin-bottom:12px}
+        .sec-h{font-size:clamp(1.7em,3.5vw,2.4em);font-weight:900;color:#111;margin-bottom:10px;letter-spacing:-0.5px}
+        .sec-h span{color:#1563eb}
+        .sec-p{color:#888;font-size:.97em;line-height:1.7;margin-bottom:50px}
+
+        /* 증상 카드 */
+        .sym-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+        .sym-card{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:28px 24px;transition:all .3s;position:relative;overflow:hidden}
+        .sym-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#1563eb,#60a5fa);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+        .sym-card:hover{border-color:#1563eb;transform:translateY(-4px);box-shadow:0 10px 30px rgba(21,99,235,.1)}
+        .sym-card:hover::before{transform:scaleX(1)}
+        .sym-card .badge{position:absolute;top:16px;right:16px;background:#fef2f2;color:#ef4444;font-size:.72em;font-weight:700;padding:3px 8px;border-radius:4px}
+        .sym-icon{font-size:2.2em;margin-bottom:14px;display:block}
+        .sym-card h3{font-size:1em;font-weight:800;color:#111;margin-bottom:7px}
+        .sym-card p{font-size:.87em;color:#777;line-height:1.7}
+
+        /* 서비스 */
+        .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:#e5e7eb;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden}
+        .svc-item{background:#fff;padding:30px 22px;transition:background .2s}
+        .svc-item:hover{background:#f8faff}
+        .svc-no{font-size:.7em;color:#bbb;font-weight:700;letter-spacing:2px;display:block;margin-bottom:14px}
+        .svc-icon2{font-size:2.3em;margin-bottom:14px;display:block}
+        .svc-item h3{font-size:.97em;font-weight:800;color:#111;margin-bottom:7px}
+        .svc-item p{font-size:.84em;color:#888;line-height:1.6}
+        .svc-tag2{display:inline-block;margin-top:10px;background:#eff6ff;color:#1563eb;padding:3px 10px;border-radius:4px;font-size:.74em;font-weight:700}
+
+        /* 갤러리 */
+        .gal-sec{background:#f8faff;padding:80px 20px}
+        .gal-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:220px 220px;gap:12px;max-width:1050px;margin:50px auto 0}
+        .gal-item{border-radius:12px;overflow:hidden;position:relative;background:#e5e7eb}
+        .gal-item.tall{grid-row:1/3}
+        .gal-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+        .gal-item:hover img{transform:scale(1.05)}
+        .gal-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.7));padding:14px 12px;font-size:.84em;font-weight:700;color:#fff;opacity:0;transition:opacity .3s}
+        .gal-item:hover .gal-label{opacity:1}
+
+        /* 프로세스 */
+        .proc-steps{display:flex;gap:0;max-width:950px;margin:0 auto;position:relative}
+        .proc-steps::before{content:'';position:absolute;top:32px;left:5%;right:5%;height:1px;background:#e5e7eb}
+        .proc-step{flex:1;text-align:center;padding:0 15px;position:relative;z-index:1}
+        .proc-circle{width:65px;height:65px;background:#fff;border:2px solid #e5e7eb;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:1.1em;font-weight:900;color:#111;transition:all .3s}
+        .proc-step:hover .proc-circle{background:#1563eb;border-color:#1563eb;color:#fff}
+        .proc-step h3{font-size:.93em;font-weight:800;color:#111;margin-bottom:6px}
+        .proc-step p{font-size:.8em;color:#888;line-height:1.6}
+
+        /* 지역 */
+        .area-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;max-width:950px;margin:0 auto}
+        .area-card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:24px 18px;text-align:center;transition:all .3s}
+        .area-card:hover{border-color:#1563eb;transform:translateY(-3px);box-shadow:0 8px 20px rgba(21,99,235,.1)}
+        .area-card h3{font-size:1.05em;font-weight:900;color:#1563eb;margin-bottom:9px;padding-bottom:9px;border-bottom:1px solid #f0f0f0}
+        .area-card p{font-size:.8em;color:#888;line-height:1.9}
+
+        /* CTA */
+        .cta-sec{background:linear-gradient(135deg,#1563eb,#0f4cbf);padding:85px 20px;text-align:center;position:relative;overflow:hidden}
+        .cta-sec::before{content:'💧';position:absolute;font-size:20em;opacity:.04;top:50%;left:50%;transform:translate(-50%,-50%)}
+        .cta-inner{position:relative;z-index:1}
+        .cta-sec h2{font-size:clamp(1.8em,4vw,2.8em);font-weight:900;color:#fff;margin-bottom:15px;letter-spacing:-0.5px}
+        .cta-sec p{color:rgba(255,255,255,.8);margin-bottom:40px;font-size:1.05em;line-height:1.75}
+        .cta-btn{display:inline-block;background:#fff;color:#1563eb;padding:22px 60px;border-radius:10px;font-size:1.5em;font-weight:900;text-decoration:none;box-shadow:0 8px 25px rgba(0,0,0,.2);transition:transform .2s}
+        .cta-btn:hover{transform:scale(1.04)}
+
+        footer{background:#0a0a0a;padding:28px 20px;text-align:center;color:rgba(255,255,255,.3);font-size:.82em}
+        footer span{color:#60a5fa}
+
+        @media(max-width:768px){
+            .hero{grid-template-columns:1fr}
+            .hero-left{padding:50px 24px}
+            .hero-right{display:none}
+            .gal-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+            .gal-item.tall{grid-row:auto;grid-column:1/3}
+            .proc-steps{flex-direction:column;gap:20px}
+            .proc-steps::before{display:none}
+            header{padding:14px 20px}
+        }
+    </style>
+</head>
+<body>
+
+<!-- 모바일 하단 고정 -->
+<div class="mobile-cta">
+    <div class="txt">
+        <strong>💧 하수구 배관 전문</strong>
+        24시간 긴급출동 · 무료 내시경 진단
+    </div>
+    <a href="tel:0504-1362-8100">📞 지금 전화</a>
+</div>
+<div class="mb-pad"></div>
+
+<!-- 상단 알림바 -->
+<div class="top-bar">
+    🔴 24시간 긴급출동 대기중 &nbsp;|&nbsp; 서울·인천·경기 30분 내 출동 &nbsp;|&nbsp;
+    <a href="tel:0504-1362-8100">📞 0504-1362-8100</a>
+</div>
+
+<!-- 헤더 -->
+<header>
+    <div class="logo">💧 <span>Pipe</span>1982 배관전문</div>
+    <a href="tel:0504-1362-8100" class="header-tel">📞 긴급출동 전화</a>
+</header>
+
+<!-- 히어로 -->
+<section class="hero">
+    <div class="hero-left">
+        <div class="hero-tag">🔵 서울·인천·경기 24시간 전문</div>
+        <h1>
+            하수구가 막혔을 때<br>
+            <em>즉시 해결</em>하는<br>
+            배관 전문가
+        </h1>
+        <p class="hero-sub">약품·뚫어뻥은 임시방편입니다. 내시경 정밀 진단 후 고압세척으로 근본 원인을 해결해야 재발하지 않습니다.</p>
+        <div class="hero-checks">
+            <div class="check"><div class="check-dot">✓</div> 내시경 정밀 진단 무료</div>
+            <div class="check"><div class="check-dot">✓</div> 고압세척·플렉스샤프트 당일 완료</div>
+            <div class="check"><div class="check-dot">✓</div> 작업 전 견적 확정, 추가비용 없음</div>
+            <div class="check"><div class="check-dot">✓</div> 30분 내 긴급출동 가능</div>
+        </div>
+        <a href="tel:0504-1362-8100" class="hero-btn">
+            📞 0504-1362-8100 긴급출동
+        </a>
+    </div>
+    <div class="hero-right">
+        <div class="symptom-title">🚨 지금 이런 증상 있으신가요?</div>
+        <div class="symptom-list">
+            <div class="sym-item"><div class="sym-dot"></div><span>싱크대·화장실 물이 역류한다</span></div>
+            <div class="sym-item"><div class="sym-dot"></div><span>하수구에서 심한 악취가 난다</span></div>
+            <div class="sym-item"><div class="sym-dot"></div><span>물이 평소보다 느리게 내려간다</span></div>
+            <div class="sym-item"><div class="sym-dot"></div><span>꾸르륵 공기 빠지는 소리가 난다</span></div>
+            <div class="sym-item"><div class="sym-dot"></div><span>변기 물이 완전히 내려가지 않는다</span></div>
+            <div class="sym-item"><div class="sym-dot"></div><span>아랫집에서 누수 연락이 왔다</span></div>
+        </div>
+        <div class="call-card">
+            <p>하나라도 해당되면 즉시 전화!</p>
+            <a href="tel:0504-1362-8100">📞 0504-1362-8100</a>
+        </div>
+    </div>
+</section>
+
+<!-- 통계 -->
+<div class="stats">
+    <div class="stats-inner">
+        <div class="stat-item"><span class="stat-n">30분</span><div class="stat-l">평균 출동 시간</div></div>
+        <div class="stat-item"><span class="stat-n">98%</span><div class="stat-l">당일 해결률</div></div>
+        <div class="stat-item"><span class="stat-n">무료</span><div class="stat-l">내시경 진단</div></div>
+        <div class="stat-item"><span class="stat-n">0원</span><div class="stat-l">추가비용 없음</div></div>
+        <div class="stat-item"><span class="stat-n">24H</span><div class="stat-l">365일 대기</div></div>
+    </div>
+</div>
+
+<!-- 증상 -->
+<section class="sec" style="background:#fff">
+    <div class="sec-inner">
+        <span class="sec-label">SYMPTOMS</span>
+        <h2 class="sec-h">이런 증상 <span>방치하면 안 됩니다</span></h2>
+        <p class="sec-p">배관 문제는 방치할수록 아랫집 누수 피해로 번집니다. 증상이 보이면 즉시 연락하세요.</p>
+        <div class="sym-grid">
+            <div class="sym-card"><span class="badge">위험</span><span class="sym-icon">💧</span><h3>물 역류</h3><p>싱크대·화장실에서 물이 거꾸로 올라오면 배관이 완전히 막힌 위급 신호입니다</p></div>
+            <div class="sym-card"><span class="badge">위험</span><span class="sym-icon">😷</span><h3>하수 악취</h3><p>배수구에서 냄새가 올라온다면 배관 내부 부패물이 가득 찬 상태입니다</p></div>
+            <div class="sym-card"><span class="badge">주의</span><span class="sym-icon">🐢</span><h3>느린 배수</h3><p>물이 느리게 내려간다면 완전 막힘 직전 경고 신호입니다</p></div>
+            <div class="sym-card"><span class="badge">주의</span><span class="sym-icon">🔊</span><h3>소음 발생</h3><p>꾸르륵 소리는 이물질이 80% 이상 막힌 상태에서 납니다</p></div>
+            <div class="sym-card"><span class="badge">긴급</span><span class="sym-icon">🏠</span><h3>아랫집 누수</h3><p>이미 누수로 번진 긴급 상황! 지금 당장 응급조치가 필요합니다</p></div>
+            <div class="sym-card"><span class="badge">긴급</span><span class="sym-icon">🚽</span><h3>변기 막힘</h3><p>변기 막힘은 뚫어뻥으로 안 됩니다. 전문 내시경 장비가 필요합니다</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- 서비스 -->
+<section class="sec" style="background:#f8faff" id="service">
+    <div class="sec-inner">
+        <span class="sec-label">SERVICES</span>
+        <h2 class="sec-h">전문 <span>배관 서비스</span></h2>
+        <p class="sec-p">내시경 진단 후 최적 공법 적용 — 모든 배관 문제 당일 해결</p>
+        <div class="svc-grid">
+            <div class="svc-item"><span class="svc-no">01</span><span class="svc-icon2">🚽</span><h3>변기 막힘·역류</h3><p>이물질·요석 완전 제거</p><span class="svc-tag2">긴급 가능</span></div>
+            <div class="svc-item"><span class="svc-no">02</span><span class="svc-icon2">🍽️</span><h3>싱크대 배수</h3><p>기름 슬러지 고압세척</p><span class="svc-tag2">당일 완료</span></div>
+            <div class="svc-item"><span class="svc-no">03</span><span class="svc-icon2">🚿</span><h3>하수구·배수구</h3><p>역류·악취 완벽 처리</span><span class="svc-tag2">즉시 출동</span></div>
+            <div class="svc-item"><span class="svc-no">04</span><span class="svc-icon2">🔍</span><h3>누수 탐지·보수</h3><p>정밀 장비 위치 파악</p><span class="svc-tag2">전문 진단</span></div>
+            <div class="svc-item"><span class="svc-no">05</span><span class="svc-icon2">💨</span><h3>고압세척·스케일링</h3><p>노후 배관 완전 복원</p><span class="svc-tag2">근본 해결</span></div>
+            <div class="svc-item"><span class="svc-no">06</span><span class="svc-icon2">🏢</span><h3>건물·상가 메인배관</h3><p>공용배관 전문 처리</p><span class="svc-tag2">대형 가능</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- 갤러리 -->
+<section class="gal-sec">
+    <div style="max-width:1050px;margin:0 auto">
+        <span class="sec-label">GALLERY</span>
+        <h2 class="sec-h">실제 <span>현장 사진</span></h2>
+        <p class="sec-p">직접 촬영한 현장 작업 사진입니다</p>
+    </div>
+    <div class="gal-grid">
+        <div class="gal-item tall"><img src="https://loremflickr.com/600/440/plumbing,drain?random=11" alt="배관 내시경 진단"><div class="gal-label">🔍 배관 내시경 정밀 진단</div></div>
+        <div class="gal-item"><img src="https://loremflickr.com/400/220/pipe,water?random=22" alt="고압세척"><div class="gal-label">💨 고압세척</div></div>
+        <div class="gal-item"><img src="https://loremflickr.com/400/220/drain,repair?random=33" alt="스케일링"><div class="gal-label">🔧 스케일링</div></div>
+        <div class="gal-item"><img src="https://loremflickr.com/400/220/bathroom,drain?random=44" alt="욕실 복원"><div class="gal-label">🚿 욕실 복원</div></div>
+        <div class="gal-item"><img src="https://loremflickr.com/400/220/kitchen,sink?random=55" alt="싱크대 해결"><div class="gal-label">🍽️ 싱크대 해결</div></div>
+    </div>
+</section>
+
+<!-- 프로세스 -->
+<section class="sec" style="background:#fff">
+    <div class="sec-inner">
+        <span class="sec-label">PROCESS</span>
+        <h2 class="sec-h" style="text-align:center">출동 <span>프로세스</span></h2>
+        <p class="sec-p" style="text-align:center">전화 한 통으로 끝 — 5단계 완벽 해결</p>
+        <div class="proc-steps">
+            <div class="proc-step"><div class="proc-circle">1</div><h3>전화 접수</h3><p>증상 설명 후 즉시 접수</p></div>
+            <div class="proc-step"><div class="proc-circle">2</div><h3>30분 출동</h3><p>가장 가까운 기술자 배차</p></div>
+            <div class="proc-step"><div class="proc-circle">3</div><h3>내시경 진단</h3><p>원인 정확히 파악</p></div>
+            <div class="proc-step"><div class="proc-circle">4</div><h3>고압세척</h3><p>플렉스샤프트로 완전 제거</p></div>
+            <div class="proc-step"><div class="proc-circle">5</div><h3>완료 확인</h3><p>재내시경으로 직접 확인</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- 지역 -->
+<section class="sec" style="background:#f8faff">
+    <div class="sec-inner">
+        <span class="sec-label">SERVICE AREA</span>
+        <h2 class="sec-h" style="text-align:center">출동 <span>가능 지역</span></h2>
+        <p class="sec-p" style="text-align:center">서울·인천·경기 전 지역 + 전국 출동 가능</p>
+        <div class="area-grid">
+            <div class="area-card"><h3>서울</h3><p>강남 서초 송파 강동 강서 마포 종로 중구 용산 성동 광진 동대문 성북 강북 노원 은평 양천 구로 영등포 동작 관악</p></div>
+            <div class="area-card"><h3>경기</h3><p>수원 성남 분당 용인 안양 부천 광명 평택 안산 고양 일산 의정부 파주 김포 하남 남양주 구리 광주 이천</p></div>
+            <div class="area-card"><h3>인천</h3><p>중구 동구 미추홀 연수 남동 부평 계양 서구 강화 송도 청라 검단</p></div>
+            <div class="area-card"><h3>전국</h3><p>위 지역 외에도 전국 어디든 출동 가능합니다. 거리에 따라 출동 여부 확인 후 안내드립니다.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+    <div class="cta-inner">
+        <h2>막힌 배관<br>지금 바로 해결하세요</h2>
+        <p>방치할수록 아랫집 누수로 번집니다<br>30분 내 출동 · 내시경 무료 · 당일 완벽 해결</p>
+        <a href="tel:0504-1362-8100" class="cta-btn">📞 0504-1362-8100</a>
+        <p style="margin-top:20px;font-size:.88em;color:rgba(255,255,255,.5)">24시간 365일 · 서울 인천 경기 전국 · 추가비용 없음</p>
+    </div>
+</section>
+
+<footer>
+    <p>Pipe1982 하수구 배관 전문 · 서울 인천 경기 전국</p>
+    <p style="margin-top:8px">24시간 긴급출동: <span>0504-1362-8100</span></p>
+</footer>
+
+</body>
+</html>
